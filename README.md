@@ -7,7 +7,7 @@
 
 ## 🔗 Демо
 
---скоро--
+Проект запущен и доступен по ссылке: [PintIQ на Netlify](https://rad-panda-eb9def.netlify.app/ru)
 
 ---
 
