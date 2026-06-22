@@ -3,7 +3,7 @@
 > Мобильное веб-приложение для поиска информации о пиве и элях.
 > Поиск напитка по названию, фото или голосовому вводу.
 
-<img src="./public/preview.jpg" alt="PintIQ Preview" style="max-width: 600px;">
+<img src="./public/preview.jpg" alt="PintIQ Preview" style="width: 600px">
 
 ## 🔗 Демо
 
