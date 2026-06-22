@@ -1,4 +1,5 @@
 import ThemeToggle from '@/components/ui/ThemeToggle'
+import LocaleSwitcher from '@/components/ui/LocaleSwitcher'
 import { IconBeerFilled } from '@tabler/icons-react'
 import { getTranslations } from 'next-intl/server'
 
@@ -14,12 +15,17 @@ export default async function Header() {
       }}
     >
       <div className="flex items-center gap-2">
-        <IconBeerFilled size={26} style={{ color: 'var(--color-brand-amber)' }} />
+         <IconBeerFilled size={26} style={{ color: 'var(--color-brand-amber)' }} />
         <span className="text-xl font-bold" style={{ color: 'var(--foreground)' }}>
           {t('title')}
         </span>
       </div>
-      <ThemeToggle />
+
+      {/* Переключатели справа */}
+      <div className="flex items-center gap-2">
+        <LocaleSwitcher />
+        <ThemeToggle />
+      </div>
     </div>
   )
 }

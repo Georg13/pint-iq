@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍺 PintIQ — Умный справочник по напиткам
 
-## Getting Started
+> Мобильное веб-приложение для поиска информации о пиве и элях.
+> Поиск напитка по названию, фото или голосовому вводу.
 
-First, run the development server:
+![PintIQ Preview](./public/preview.jpg)
+
+## 🔗 Демо
+
+--скоро--
+
+---
+
+## ✨ Функционал
+
+### 🔍 Поиск напитков
+- Текстовый поиск по названию
+- Поиск по фото (OCR через Tesseract.js)
+- Голосовой поиск (Web Speech API)
+
+### 🍺 Карточка напитка
+- Подробное описание, характеристики
+- Состав, сочетания с едой, совет пивовара
+- Перевод всего содержимого (MyMemory API)
+
+### 📓 Личный дневник
+- Добавление напитков с оценкой 0-10
+- Система категорий: 🤢 Испытание → 😋 Блаженство
+- Личные заметки к каждому напитку
+- Просмотр, редактирование, удаление записей
+
+### 🍻 Мои бары
+- Добавление баров с автоматическим геокодированием адреса
+- Каскадный фильтр: страна → город
+- Открытие маршрута в Google Maps или Яндекс Картах
+- Оценка заведений по звёздам
+
+### 🔐 Авторизация
+- Регистрация / Вход по email и паролю
+- Данные сохраняются в облаке (Supabase)
+
+### 🎨 UI/UX
+- Тёмная / Светлая тема (сохраняется между сессиями)
+- Два языка интерфейса: русский и английский
+- Mobile-first дизайн (ширина телефонного экрана)
+- Кастомный скроллбар, анимации
+
+---
+
+## 🛠 Стек технологий
+
+| Категория | Технология |
+|-----------|-----------|
+| Фреймворк | Next.js 16.2 (App Router) |
+| Язык | TypeScript |
+| Стили | Tailwind CSS v4 |
+| Стейт | Redux Toolkit + RTK Query |
+| База данных | Supabase (PostgreSQL) |
+| Авторизация | Supabase Auth |
+| API напитков | PunkAPI v3 |
+| OCR | Tesseract.js |
+| Геокодирование | Nominatim (OpenStreetMap) |
+| Перевод | MyMemory API |
+| Иконки | Tabler Icons |
+| i18n | next-intl |
+| Деплой | Vercel |
+
+---
+
+## 🚀 Запуск локально
+
+### Требования
+- Node.js v18+
+- Аккаунт Supabase
+
+
+### Установка
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Georg13/pint-iq.git
+cd pint-iq
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Переменные окружения
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Создай `.env.local` в корне проекта:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-## Learn More
+### База данных
 
-To learn more about Next.js, take a look at the following resources:
+Выполни SQL из файла `supabase/schema.sql` в Supabase SQL Editor.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👤 Автор
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Георгий Кавтарашвили**
+- GitHub: [@Georg13](https://github.com/Georg13)
+- Telegram: [@kgt_13](https://t.me/kgt_13)
+- Email: geokav87@mail.ru
