@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Кремовые цвета для светлой темы */
+  --color-cream-50: #FDFAF4;
+  --color-cream-100: #FAF4E6;
+  --color-cream-200: #F5E9CC;
+
+  /* Акцентный цвет */
+  --color-brand-amber: #D97706;
+  --color-brand-dark: #92400E;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Светлая тема */
+:root {
+  --background: #FDFAF4;   /* кремовый */
+  --foreground: #1C1917;   /* тёплый почти-чёрный */
+  --surface: #FAF4E6;      /* чуть темнее крема — для карточек */
+  --border: #E5D9C3;       /* кремовая граница */
+  --muted: #78716C;        /* приглушённый текст */
+}
+
+/* Тёмная тема */
+.dark {
+  --background: #1C1917;   /* тёплый тёмный */
+  --foreground: #FDFAF4;   /* кремовый текст */
+  --surface: #292524;      /* поверхность карточек */
+  --border: #44403C;       /* граница */
+  --muted: #A8A29E;        /* приглушённый текст */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Кастомный скроллбар */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+/* курсор */
+button,
+[role="button"],
+a {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
